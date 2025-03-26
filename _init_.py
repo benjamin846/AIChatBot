@@ -46,4 +46,17 @@ class NeuralNetwork:
 
 learning_rate = 0.1
 network = NeuralNetwork(learning_rate)
-network.predict(inputVector)
+
+def awaitQuery():
+    quiery = input("> ")
+    submitQuery(quiery)
+
+def submitQuery(quiery):
+    if quiery:
+        network.predict(inputVector)
+    else:
+        print("Please provide a query")
+        awaitQuery()
+        
+
+submitQuery(quiery)
