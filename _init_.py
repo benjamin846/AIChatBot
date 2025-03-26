@@ -1,5 +1,11 @@
 import numpy as np
+import http
+from http import HTTPMethod, HTTPStatus, client
+import socket
+
 inputVector = [1.72, 1.23]
+hostname = socket.gethostname()
+IPAddr = socket.gethostbyname(hostname)
 
 class NeuralNetwork:
     def __init__(self, learning_rate):
@@ -53,6 +59,8 @@ def awaitQuery():
 
 def submitQuery(quiery):
     if quiery:
+        status = HTTPStatus.OK
+        HTTPMethod.GET
         network.predict(inputVector)
     else:
         print("Please provide a query")
